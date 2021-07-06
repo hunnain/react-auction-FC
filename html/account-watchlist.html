@@ -1,0 +1,476 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Account::Watchlist- WatchTrade</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    
+    <!-- CSS
+	============================================ -->
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="assets/css/icons.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/css/plugins.css">
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Modernizer JS -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body>
+<header class="header-area header-padding-1 sticky-bar header-res-padding clearfix">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-4">
+                    <div class="logo">
+                        <a href="index.html">
+                            <!-- <img alt="" src="assets/img/logo/logo.png"> -->
+                            <h5 class="logo-heading">WatchTrade</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-10 col-lg-10 d-none d-lg-block">
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="#"> Auctions </a></li>
+                                <li><a href="#"> Sell Now </a></li>
+                                <li><a href="#"> Register </a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#loginModal"> Login </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu-area">
+                <div class="mobile-menu">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li><a href="#"> Auctions </a></li>
+                            <li><a href="#"> Sell Now </a></li>
+                            <li><a href="#"> Register </a></li>
+                            <li><a href="#"> Login </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</header>
+<div class="container-fluid pt-100 bg-all">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="account-bid">
+                    <img src="assets/images/xd/profile/profile-1.png" alt="Profile" class="main-profile-img account-bid-img" />
+                    <a href="#" class="account-bid-a"><img src="assets/images/xd/icons/pen-01.png" alt="edit-img" /></a>
+                </div>
+                
+                <h2 class="mt-25 account-bid-h2">@marcussmith</h2>
+                <h6 class="fs-16">Marcus Smith</h6>
+                <div class="mt-40">
+                    <ul class="side-nav">
+                        <li>
+                            <img src="assets/images/xd/icons/profile.png" alt="" />
+                            <a class="ml-20" href="account-profile.html">Profile</a>
+                        </li>
+                        <li>
+                            <img src="assets/images/xd/icons/billing.png" alt="" />
+                            <a class="ml-20" href="account-billing.html">Billing</a>
+                        </li>
+                        <li>
+                            <img src="assets/images/xd/icons/bids.png" alt="" />
+                            <a class="ml-20" href="account-bids.html">Bids</a>
+                        </li>
+                        <li>
+                            <img src="assets/images/xd/icons/listing.png" alt="" />
+                            <a class="ml-20" href="account-listing.html">Listing</a>
+                        </li>
+                        <li class="active">
+                            <img src="assets/images/xd/icons/watchlist.png" alt="" />
+                            <a class="ml-20" href="account-watchlist.html">Watchlist</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-left mb-20">
+                    <button class="logout-btn"><img class="m-right-5" src="assets/images/xd/icons/leave.png" alt="" /> Logout</button>
+                </div>
+                
+            </div>
+            <div class="ml-auto mr-auto col-lg-9">
+                <div class="checkout-wrapper">
+                    <div id="faq" class="panel-group">
+                        <div class="panel panel-default single-my-account">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><a data-toggle="collapse" data-parent="#faq" href="#my-account-1">Live Auctions <div class="numberCircle">30</div></a> </h3>
+                            </div>
+                            <div id="my-account-1" class="panel-collapse collapse show">
+                                <div class="panel-body">
+                                    <div class="myaccount-info-wrapper">
+                                        <div class="row">
+                                            <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag" />
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-2.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-2a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="purple">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 60.00</span> <span class="price-circle">4</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                           <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag">
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-3.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-3a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="pink">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 90.00</span> <span class="price-circle">45</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag" />
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-4.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-4a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="purple">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 230.00</span> <span class="price-circle">9</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                            <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag" />
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-4.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-4a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="purple">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 30.00</span> <span class="price-circle">20</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag">
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-2.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-2a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="purple">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 320.00</span> <span class="price-circle">90</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                           <div class="col-xl-5 col-md-5 col-lg-5 col-sm-6">
+                                                <div>
+                                                    <h3 class="account-watchlist-div"><a href="#">Breguet</a></h3>
+                                                    <img class="flags" src="assets/images/flags/de.png" alt="Germany Flag">
+                                                    <p class="account-watchlist-p">Sphere Bassilica - Gray 2A7865</p>
+                                                </div>
+                                                
+                                                <div class="product-wrap mb-25 scroll-zoom">
+                                                    <div class="product-img">
+                                                        <a href="#">
+                                                            <img class="default-img" src="assets/images/xd/watches/watch-3.jpg" alt="" />
+                                                            <img class="hover-img" src="assets/images/xd/watches/watch-3a.jpg" alt="" />
+                                                        </a>
+                                                        <span class="pink">01:16:48</span>
+                                                        <div class="product-action">
+                                                            <div class="pro-same-action pro-wishlist">
+                                                                <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-cart">
+                                                                <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                                                            </div>
+                                                            <div class="pro-same-action pro-quickview">
+                                                                <a title="Quick View" href="#" data-toggle="modal" data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-content">
+                                                        <div class="product-price">
+                                                            <span class="prod-price-watchlist">$ 760.00</span> <span class="price-circle">13</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-1 col-md-1 col-lg-1 col-sm-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-area bg-gray">
+    <div class="container-fluid" style="background: #2e2e2e;">
+        <div class="container pt-100 pb-40">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="copyright mb-30 ">
+                        <div class="footer-logo">
+                            <a href="index.html">
+                                <!-- <img alt="" src="assets/img/logo/logo.png"> -->
+                                <h5 class="logo-heading" style="font-size: 32px;
+                                opacity: 0.45;">WatchTrade</h5>
+                            </a>
+                        </div>
+                        <p style="padding-top: 60px;">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="footer-widget mb-30 " style="text-align: center;">
+                        <div class="footer-title">
+                            <h3>Auctions</h3>
+                        </div>
+                        <div class="footer-list" style="padding-top: 50px;">
+                            <ul>
+                                <li><a href="#">Live Auctions</a></li>
+                                <li><a href="#">Coming Soon</a></li>
+                                <li><a href="#">Recently Sold</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="footer-widget mb-30 ml-30">
+                        <div class="footer-title">
+                            <h3>Company</h3>
+                        </div>
+                        <div class="footer-list"  style="padding-top: 50px;">
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Cookie Policy</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="footer-widget mb-30 ">
+                        <div class="footer-title">
+                            <h3>Sell with WatchTrade</h3>
+                        </div>
+                        <div class="footer-list"  style="padding-top: 50px;">
+                            <ul>
+                                <li><a href="#">Sell Now</a></li>
+                                <li><a href="#">About Watch Trade</a></li>
+                                <li><a href="#">Sell Now</a></li>
+                                <li><a href="#">FAQ's</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background: #0692FF;height: 86px;display: flex;">
+        <div class="container" style="margin: auto;">
+            <div class="row">
+                <div class="col-md-4">
+                    <p style="font-size: 16px;color: white;">WatchTrade © 2021</p>
+                </div>
+                <div class="col-md-8">
+                    <div>
+                        <ul style="display: flex;" class="last-footer">
+                            <li><a href="#">English (UK)</a></li>
+                            <li><a href="#">ภาษาไทย</a></li>
+                            <li><a href="#">中文(简体)</a></li>
+                            <li><a href="#">한국어</a></li>
+                            <li><a href="#">日本語</a></li>
+                            <li><a href="#">Français (France)</a></li>
+                            <li><a href="#">Español</a></li>
+                            <li><a href="#">Deutsch</a></li>
+                            <li><a href="#">Italiano</a></li>
+                            <li><a href="#">Português (Brasil)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- All JS is here
+============================================ -->
+
+<!-- jQuery JS -->
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<!-- Popper JS -->
+<script src="assets/js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins JS -->
+<script src="assets/js/plugins.js"></script>
+<!-- Ajax Mail -->
+<script src="assets/js/ajax-mail.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function() {
+    $("#show_hide_password a").on('click', function(event) {
+        event.preventDefault();
+        if($('#show_hide_password input').attr("type") == "text"){
+            $('#show_hide_password input').attr('type', 'password');
+            $('#show_hide_password i').addClass( "fa-eye-slash" );
+            $('#show_hide_password i').removeClass( "fa-eye" );
+        }else if($('#show_hide_password input').attr("type") == "password"){
+            $('#show_hide_password input').attr('type', 'text');
+            $('#show_hide_password i').removeClass( "fa-eye-slash" );
+            $('#show_hide_password i').addClass( "fa-eye" );
+        }
+    });
+});
+</script>
+</body>
+
+</html>
