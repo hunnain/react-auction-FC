@@ -15,8 +15,6 @@
     }
   ],
   "homepage": "https://hunnain.github.io/react-auction-FC/",
-  "copyright": "",
-  "license": "",
   "private": true,
   "repository": {
     "type": "git",
@@ -67,7 +65,7 @@
   "devDependencies": {},
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
