@@ -58,6 +58,38 @@ export async function GetAsync(
         console.error(error);
     }
 }
+export async function GetAsyncBody(
+
+    baseUrl,
+    authorize = true,
+    body
+) {
+    let headers = {
+        Accept: "application/json",
+    };
+    if (authorize) {
+        let accessToken = await validateAccessToken();
+        console.log('accessToken', accessToken);
+
+        headers["Authorization"] = `Bearer ${accessToken}`;
+    }
+
+    try {
+        return await fetch(baseUrl, {
+            method: "GET",
+            headers: headers,
+            body: JSON.stringify(body),
+        }).then((res) => {
+            if (res.status === 401) {
+                deleteUserCookie();
+                redirectToLogin();
+            }
+            return res.json();
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 export async function DeleteAsync(
     baseUrl,

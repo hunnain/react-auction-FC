@@ -1,4 +1,4 @@
-import { ContactUsCall, DashboardDataGet, DashboardPut, DashboardDataGetById, deleteDashboardRecord,loginCallPost } from "../Services/DashboardService";
+import { ContactUsCall, DashboardDataGet, DashboardPut,addToWishListPost, DashboardDataGetById, deleteDashboardRecord,loginCallPost } from "../Services/DashboardService";
 
 export async function ContactUsCallPost(data) {
     let body = {
@@ -23,6 +23,12 @@ export async function DashboardUpdateCall(id, data) {
 export async function getDashboardDetailAll() {
 
     return await DashboardDataGet();
+}
+export async function addToWishList(id) {
+    let body = {
+        productId: id 
+    }
+    return await addToWishListPost(body);
 }
 export async function getDashboardDetailById(id) {
 

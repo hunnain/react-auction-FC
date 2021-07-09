@@ -1,8 +1,22 @@
 import React, { Component, lazy } from 'react'
-
+import Cookie from 'universal-cookie';
 
 class Dashboard extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      login: false
+    };
+  }
+  componentDidMount() {
+    var cookie = new Cookie();
+    var userCookie = cookie.get("user");
+    if (!userCookie) {
+      userCookie = {};
+    } else {
+      this.setState({ login: true })
+    }
+  }
   render() {
     return (
       <>

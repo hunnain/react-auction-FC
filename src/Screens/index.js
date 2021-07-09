@@ -19,10 +19,10 @@ import About from './About/About'
 import ContactUs from './Contact/ContactUs'
 import NoWatchState from './NoWatchState/NoWatchState'
 import SellWatch from './SellWatch/SellWatch'
+import localForage from 'localforage';
 import AccountBid from './AccountBid/AccountBid'
 import AccountBilling from './AccountBilling/AccountBilling'
 import Cookie from 'universal-cookie';
-import { toast } from 'react-toastify';
 import AccountListing from './AccountListing/AccountListing'
 import {
   CModal,
@@ -38,6 +38,7 @@ import WatchDetailWonAuction from './WatchDetailWonAuction/WatchDetailWonAuction
 import WatchDetailWonAuction1 from './WatchDetailWonAuction1/WatchDetailWonAuction1'
 import WatchDetail from './WatchDetail/WatchDetail'
 import { LoginPost } from '../Controllers/DashboardController'
+import { toast } from 'react-toastify';
 
 class MainApplication extends Component {
   constructor(props) {
@@ -114,38 +115,79 @@ class MainApplication extends Component {
   submitForm = async () => {
     var cookie = new Cookie();
     if (this.state.email !== "" && this.state.password !== "") {
-      let res = await LoginPost(this.state.email, this.state.password)
-      if (res) {
-        var userCookie = {
-          accessToken: res.token,
-          refreshToken: ""
-        };
-        cookie.set("user", JSON.stringify(userCookie));
-        localStorage.setItem('userDetail', JSON.stringify(res.user));
-        console.log(res);
-        this.toggleLogin()
-      }
+      let res = await LoginPost(this.state.email, this.state.password).then(resp =>
+        resp.json().then(data => ({
+          data: data,
+          status: resp.status
+        }))).then(async res => {
+          console.log(res.data.user);
+          if (res) {
+            if (res.status === 200) {
+              this.setState({ loginModal: false })
+              await localForage.setItem('userDetail', JSON.stringify(res.data.user));
+              var userCookie = {
+                accessToken: res.data.token,
+                refreshToken: ""
+              };
+              cookie.set("user", JSON.stringify(userCookie));
+              // localStorage.setItem('userDetail', JSON.stringify(res));
+              console.log(res);
+              toast.success('Login Successfully')
+              this.ChangeView("AccountProfile")
+            }
+          
+          }
+        }).catch((err) => {
+          this.setState({ isLoading: false })
+          toast.error(err)
+
+        })
+
+
+
+      // .then(async (res) => {
+      //   if (res.status === 200) {
+      //     this.setState({ loginModal: false })
+      //     await localForage.setItem('userDetail', JSON.stringify(res.user));
+      //     var userCookie = {
+      //       accessToken: res.token,
+      //       refreshToken: ""
+      //     };
+      //     cookie.set("user", JSON.stringify(userCookie));
+      //     // localStorage.setItem('userDetail', JSON.stringify(res));
+      //     console.log(res);
+      //     toast.success('Login Successfully')
+      //     this.ChangeView("AccountProfile")
+      //   }
+      //   else if (res.status === 404) {
+      //     toast.error('Status: 404')
+      //   }
+      //   else if (res.status === 500) {
+      //     toast.error('Status: 500')
+      //   }
+      // });
+
     } else {
-      alert('Invalid Username/Password.')
+      alert('Invalid Username/Password.' + this.state.email + this.state.password)
     }
   }
   render() {
     return (
       <>
         {this.state.screen === "Dashboard" && <Dashboard ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
-        {this.state.screen === "About" && <About ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "Faqs" && <Faqs ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "ContactUs" && <ContactUs ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "SellWatch" && <SellWatch ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "AccountBid" && <AccountBid ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "AccountListing" && <AccountListing ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "AccountBilling" && <AccountBilling ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "AccountProfile" && <AccountProfile ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "AccountWatchList" && <AccountWatchList ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "WatchDetailLostAuction" && <WatchDetailLostAuction ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "WatchDetailWonAuction" && <WatchDetailWonAuction ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "WatchDetailWonAuction1" && <WatchDetailWonAuction1 ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
-        {this.state.screen === "WatchDetail" && <WatchDetail ChangeView={this.ChangeView} toggleLogin={this.toggleLogin}/>}
+        {this.state.screen === "About" && <About ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "Faqs" && <Faqs ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "ContactUs" && <ContactUs ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "SellWatch" && <SellWatch ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "AccountBid" && <AccountBid ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "AccountListing" && <AccountListing ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "AccountBilling" && <AccountBilling ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "AccountProfile" && <AccountProfile ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "AccountWatchList" && <AccountWatchList ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "WatchDetailLostAuction" && <WatchDetailLostAuction ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "WatchDetailWonAuction" && <WatchDetailWonAuction ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "WatchDetailWonAuction1" && <WatchDetailWonAuction1 ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
+        {this.state.screen === "WatchDetail" && <WatchDetail ChangeView={this.ChangeView} toggleLogin={this.toggleLogin} />}
 
 
 
@@ -157,20 +199,22 @@ class MainApplication extends Component {
           closeButton
         >
           <CModalHeader closeButton>
-            
+
           </CModalHeader>
           <CModalBody className="modalText">
-            
+
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <h4 class="mb-60 text-center login-modal-sign">Sign in to WatchTrade</h4>
               </div>
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <form action="#" class="form-control login-modal-form">
-                  <input type="text" class="form-control login-email" placeholder="Email Address" />
+                <form class="form-control login-modal-form">
+                  <input type="text" class="form-control login-email" placeholder="Email Address" name="email" onChange={this.setValue} />
                   <div class="form-group mt-20">
                     <div class="input-group" id="show_hide_password">
                       <input class="form-control login-password" placeholder="Password"
+                        onChange={this.setValue}
+                        name="password"
                         type="password" />
                       <div class="input-group-addon">
                         <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
@@ -178,7 +222,7 @@ class MainApplication extends Component {
                     </div>
                   </div>
                   <a href="#">Forget Password?</a>
-                  <button class="login-btn mt-30 mb-25" type="submit">Login to Account</button>
+                  <button class="login-btn mt-30 mb-25" onClick={() => this.submitForm()}>Login to Account</button>
                   <div class="sideline">OR</div>
                   <div class="social-login-content mt-30 mb-25">
                     <div class="social-button">
@@ -192,7 +236,7 @@ class MainApplication extends Component {
 
               </div>
             </div>
-               
+
           </CModalBody>
         </CModal>
         <CModal

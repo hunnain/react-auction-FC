@@ -1,4 +1,4 @@
-import { PostAsync, GetAsync, PutAsync, DeleteAsync } from "./api";
+import { PostAsync, GetAsync, PutAsync, DeleteAsync,GetAsyncBody } from "./api";
 
 export async function ContactUsCall(body) {
   return await PostAsync(`${process.env.REACT_APP_BASE_URL}/leads/create`, body, true);
@@ -12,6 +12,9 @@ export async function DashboardPut(id, body) {
 
 export async function DashboardDataGet() {
   return await GetAsync(`${process.env.REACT_APP_BASE_URL}/web/products`, false);
+}
+export async function addToWishListPost(body) {
+  return await PostAsync(`${process.env.REACT_APP_BASE_URL}/users/addToWatchList`, body,true);
 }
 export async function DashboardDataGetById(id) {
   return await GetAsync(`${process.env.REACT_APP_BASE_URL}/Dashboard/GetDashboardById?id=${id}`, true);

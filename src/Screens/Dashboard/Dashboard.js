@@ -11,7 +11,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import Header from '../../Component/Header'
-import { getDashboardDetailAll } from '../../Controllers/DashboardController'
+import { getDashboardDetailAll,addToWishList } from '../../Controllers/DashboardController'
 import Footer from '../../Component/Footer'
 
 class Dashboard extends Component {
@@ -30,12 +30,17 @@ class Dashboard extends Component {
       this.setState({ data: res })
     }
     console.log('res', res);
-
+  }
+  addWatchList = async(id) => {
+    
+    let res = await addToWishList(id)
+   
+    console.log('res', res);
   }
   render() {
     return (
       <>
-        <Header ChangeView={this.props.ChangeView} toggleLogin={this.props.toggleLogin}/>
+        <Header ChangeView={this.props.ChangeView} toggleLogin={this.props.toggleLogin} />
         <div class="slider-area">
           <div class="slider-active owl-carousel nav-style-1">
             <div class="single-slider slider-height-1 bg-purple">
@@ -47,7 +52,7 @@ class Dashboard extends Component {
                       <span class="fa fa-search form-control-feedback"></span>
                       <input type="text" class="form-control" placeholder="Search" />
                       <button class="srch-btn">Search</button>
-                      <a class="filter" href="#">Filter</a>
+                      <a class="filter" >Filter</a>
                       <i class="fa fa-filter" aria-hidden="true"></i>
                     </div>
                   </div>
@@ -172,7 +177,7 @@ class Dashboard extends Component {
         </div>
         <div class="container index-pro-con">
           <div class="product-tab-list nav pt-30 pb-55 text-center">
-            <a class="active" href="#product-1" data-toggle="tab">
+            <a class="active" data-toggle="tab">
               <h4 class="index-new-arrivals">New Arrivals </h4>
             </a>
           </div>
@@ -196,27 +201,27 @@ class Dashboard extends Component {
 
                     <div class="col-xl-3 col-md-3 col-lg-3 col-sm-6">
                       <div>
-                        <h3 class="index-title"><a href="#">{value.name}</a></h3>
+                        <h3 class="index-title"><a >{value.name}</a></h3>
                         <img class="flags" src={require('../../assets/flags/de.png')} alt="Germany Flag" />
                         <p class="mb-10 index-title-p">{value.name} {value.brand} - Gray {value.modelNo}</p>
                       </div>
                       <div class="product-wrap mb-25 scroll-zoom">
                         <div class="product-img">
-                          <a href="#">
+                          <a >
                             <img class="default-img" src={require('../../assets/icons/xd/watches/watch-1.jpg')} alt="" />
                             <img class="hover-img" src={require('../../assets/icons/xd/watches/watch-1a.jpg')} alt="" />
                           </a>
-                          <span class="pink">{new Date(value.auctionExpireAt).getHours()+':'+new Date(value.auctionExpireAt).getMinutes()+'+'+new Date(value.auctionExpireAt).getMilliseconds()}</span>
+                          <span class="pink">{new Date(value.auctionExpireAt).getHours() + ':' + new Date(value.auctionExpireAt).getMinutes() + '+' + new Date(value.auctionExpireAt).getMilliseconds()}</span>
                           <div class="product-action">
                             <div class="pro-same-action pro-wishlist">
-                              <a title="Wishlist" href="wishlist.html"><i class="pe-7s-like"></i></a>
+                              <a title="Wishlist"><i class="pe-7s-like"></i></a>
                             </div>
-                            <div class="pro-same-action pro-cart">
-                              <a title="Add To Cart" href="#"><i class="pe-7s-cart"></i> Add to cart</a>
+                            <div class="pro-same-action pro-cart" onClick={() => this.addWatchList(value._id)}>
+                              <a title="Add To WatchList" ><i class="pe-7s-cart"></i> Add To WatchList</a>
                             </div>
                             <div class="pro-same-action pro-quickview">
-                              <a title="Quick View" href="#" data-toggle="modal"
-                                data-target="#exampleModal"><i class="pe-7s-look"></i></a>
+                              <a title="Quick View"  data-toggle="modal"
+                                ><i class="pe-7s-look"></i></a>
                             </div>
                           </div>
                         </div>
@@ -242,7 +247,7 @@ class Dashboard extends Component {
                   <h2 class="white">Subscribe to our Newsletter</h2>
                   <p class="white">But I must explain to you how all this mistaken idea of
                     denouncing pleasure and praising pain was born.</p>
-                  <form action="#" class="form-control index-blog-form">
+                  <form  class="form-control index-blog-form">
                     <input type="text" name="foot" id="foot" placeholder="Email Address" />
                     <input type="submit" value="Subscribe Now" class="btn btn-primary index-blog-input" />
                   </form>
