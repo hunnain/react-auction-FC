@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-UltraLight.eot');
+    src: local('Euclid Flex UltraLight'), local('EuclidFlex-UltraLight'),
+        url('EuclidFlex-UltraLight.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-UltraLight.woff2') format('woff2'),
+        url('EuclidFlex-UltraLight.woff') format('woff'),
+        url('EuclidFlex-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Light.eot');
+    src: local('Euclid Flex Light'), local('EuclidFlex-Light'),
+        url('EuclidFlex-Light.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Light.woff2') format('woff2'),
+        url('EuclidFlex-Light.woff') format('woff'),
+        url('EuclidFlex-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-BoldItalic.eot');
+    src: local('Euclid Flex Bold Italic'), local('EuclidFlex-BoldItalic'),
+        url('EuclidFlex-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-BoldItalic.woff2') format('woff2'),
+        url('EuclidFlex-BoldItalic.woff') format('woff'),
+        url('EuclidFlex-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-ThinItalic.eot');
+    src: local('Euclid Flex Thin Italic'), local('EuclidFlex-ThinItalic'),
+        url('EuclidFlex-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-ThinItalic.woff2') format('woff2'),
+        url('EuclidFlex-ThinItalic.woff') format('woff'),
+        url('EuclidFlex-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Regular.eot');
+    src: local('Euclid Flex Regular'), local('EuclidFlex-Regular'),
+        url('EuclidFlex-Regular.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Regular.woff2') format('woff2'),
+        url('EuclidFlex-Regular.woff') format('woff'),
+        url('EuclidFlex-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-UltraLightItalic.eot');
+    src: local('Euclid Flex UltraLight Italic'), local('EuclidFlex-UltraLightItalic'),
+        url('EuclidFlex-UltraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-UltraLightItalic.woff2') format('woff2'),
+        url('EuclidFlex-UltraLightItalic.woff') format('woff'),
+        url('EuclidFlex-UltraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-MediumItalic.eot');
+    src: local('Euclid Flex Medium Italic'), local('EuclidFlex-MediumItalic'),
+        url('EuclidFlex-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-MediumItalic.woff2') format('woff2'),
+        url('EuclidFlex-MediumItalic.woff') format('woff'),
+        url('EuclidFlex-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-SemiBoldItalic.eot');
+    src: local('Euclid Flex SemiBold Italic'), local('EuclidFlex-SemiBoldItalic'),
+        url('EuclidFlex-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-SemiBoldItalic.woff2') format('woff2'),
+        url('EuclidFlex-SemiBoldItalic.woff') format('woff'),
+        url('EuclidFlex-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-SemiBold.eot');
+    src: local('Euclid Flex SemiBold'), local('EuclidFlex-SemiBold'),
+        url('EuclidFlex-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-SemiBold.woff2') format('woff2'),
+        url('EuclidFlex-SemiBold.woff') format('woff'),
+        url('EuclidFlex-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-LightItalic.eot');
+    src: local('Euclid Flex Light Italic'), local('EuclidFlex-LightItalic'),
+        url('EuclidFlex-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-LightItalic.woff2') format('woff2'),
+        url('EuclidFlex-LightItalic.woff') format('woff'),
+        url('EuclidFlex-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Italic.eot');
+    src: local('Euclid Flex Italic'), local('EuclidFlex-Italic'),
+        url('EuclidFlex-Italic.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Italic.woff2') format('woff2'),
+        url('EuclidFlex-Italic.woff') format('woff'),
+        url('EuclidFlex-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Bold.eot');
+    src: local('Euclid Flex Bold'), local('EuclidFlex-Bold'),
+        url('EuclidFlex-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Bold.woff2') format('woff2'),
+        url('EuclidFlex-Bold.woff') format('woff'),
+        url('EuclidFlex-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Thin.eot');
+    src: local('Euclid Flex Thin'), local('EuclidFlex-Thin'),
+        url('EuclidFlex-Thin.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Thin.woff2') format('woff2'),
+        url('EuclidFlex-Thin.woff') format('woff'),
+        url('EuclidFlex-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Flex';
+    src: url('EuclidFlex-Medium.eot');
+    src: local('Euclid Flex Medium'), local('EuclidFlex-Medium'),
+        url('EuclidFlex-Medium.eot?#iefix') format('embedded-opentype'),
+        url('EuclidFlex-Medium.woff2') format('woff2'),
+        url('EuclidFlex-Medium.woff') format('woff'),
+        url('EuclidFlex-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
